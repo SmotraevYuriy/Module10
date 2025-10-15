@@ -2,15 +2,13 @@ package medium1.task;
 
 public class DocumentTask extends AbstractTask {
 
-    private String documentLink;
-
-    public DocumentTask(String documentLink) {
-        this.documentLink = documentLink;
+    public DocumentTask(String taskName) {
+        super("documentLink");
     }
 
     @Override
     public void showTask() {
-        System.out.println("Отображаем документ. Ссылка на документ " + documentLink);
+        System.out.println("Отображаем документ. Ссылка на документ " + getTaskName());
     }
 
 }

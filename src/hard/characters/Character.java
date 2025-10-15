@@ -1,18 +1,12 @@
 package hard.characters;
 
-import hard.Hero;
-import hard.Weapon;
-
-public abstract class Character implements Hero, Weapon {
+public abstract class Character implements Hero {
     private String name;
-    private String weapon;
     private int health;
-    private int damage;
 
-    public Character(String name, int damage, String weapon, int health) {
+
+    public Character(String name, int health) {
         this.name = name;
-        this.damage = damage;
-        this.weapon = weapon;
         this.health = health;
     }
 
@@ -22,18 +16,10 @@ public abstract class Character implements Hero, Weapon {
         return health;
     }
 
-    @Override
-    public int doDamage() {
-        return damage;
-    }
-
     public String getName() {
         return name;
     }
 
-    public String getWeapon() {
-        return weapon;
-    }
 
     public int getHealth() {
         return health;

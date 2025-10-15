@@ -1,11 +1,11 @@
 package Medium3.cars;
 
-public abstract class Car implements Rent {
+public abstract class Car implements Cars {
     private int mileage;
     private int yearsOld;
     private int index;
     private String name;
-    private int rent;
+    private double rent;
 
 
     public Car(int mileage, int yearsOld, int index, String name) {
@@ -13,18 +13,41 @@ public abstract class Car implements Rent {
         this.yearsOld = yearsOld;
         this.index = index;
         this.name = name;
+        this.rent = rent;
     }
 
     @Override
-    public void rent() {
-        rent = ((10000 - mileage)*(20 - yearsOld)* index);
+    public void setRent(double rent) {
+        this.rent = rent;
     }
 
+
+    @Override
     public String getName() {
         return name;
     }
 
-    public int getRent() {
-        return rent;
+    @Override
+    public int getMileage() {
+        return mileage;
+    }
+
+    @Override
+    public int getIndex() {
+        return index;
+    }
+
+    @Override
+    public int getYearsOld() {
+        return yearsOld;
+    }
+
+    @Override
+    public void printRent() {
+        System.out.println("Название: " + name);
+        System.out.println("Пробег: " + mileage);
+        System.out.println("Возраст: " + yearsOld);
+        System.out.println("Стоимость аренды за час: " + rent);
+        System.out.println();
     }
 }

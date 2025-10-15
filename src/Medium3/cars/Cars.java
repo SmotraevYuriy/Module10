@@ -1,17 +1,11 @@
 package Medium3.cars;
 
-public class Cars {
-    private Car[] cars;
+public interface Cars {
+    void setRent(double rent);
+    String  getName();
+    int getMileage();
+    int getIndex();
+    int getYearsOld();
+    void printRent();
 
-    public Cars(Car[] cars) {
-        this.cars = cars;
-    }
-
-    public void printRent() {
-        for (Car car : cars) {
-            car.rent();
-            System.out.println("Стоимость аренды " + car.getName() + " - " + car.getRent());
-        }
-
-    }
 }

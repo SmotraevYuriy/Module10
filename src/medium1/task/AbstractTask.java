@@ -2,6 +2,12 @@ package medium1.task;
 
 public abstract class AbstractTask implements Task {
     private boolean finished;
+    private String taskName;
+
+    public AbstractTask(String taskName) {
+        this.taskName = taskName;
+    }
+
     @Override
     public abstract void showTask();
 
@@ -13,5 +19,9 @@ public abstract class AbstractTask implements Task {
     @Override
     public boolean isFinished() {
         return finished;
+    }
+
+    public String getTaskName() {
+        return taskName;
     }
 }

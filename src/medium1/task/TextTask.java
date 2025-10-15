@@ -1,15 +1,16 @@
 package medium1.task;
 
 public class TextTask extends AbstractTask {
-    private String text;
+    //private String text;
 
 
-    public TextTask(String text) {
-        this.text = text;
+    public TextTask(String taskName) {
+        super(taskName);
     }
+
     @Override
     public void showTask() {
-        System.out.println("Отображаем текст " + text);
+        System.out.println("Отображаем текст " + getTaskName());
     }
 
 }
