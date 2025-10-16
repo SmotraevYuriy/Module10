@@ -55,6 +55,7 @@ public class Game {
         }
         heroWeapon = heroWeapon - 1;
         System.out.println("Вы выбрали " + weapons[heroWeapon].getName());
+        heroes[heroIndex - 1].setWeapon(weapons[heroWeapon]);
         return heroWeapon;
     }
 
@@ -67,10 +68,11 @@ public class Game {
     public int villainWeaponChoose() {
         villainWeapon = new Random().nextInt(3);
         System.out.println(". Оружие: " + weapons[villainWeapon].getName());
+        villains[villainIndex].setWeapon(weapons[villainWeapon]);
         return villainWeapon;
     }
 
-    public boolean playerMove(int heroWeapon, int villainIndex, boolean playerWin) {
+    public boolean playerMove(int heroIndex, int villainIndex, boolean playerWin) {
         Scanner scanner = new Scanner(System.in);
         int damage;
         int health;
@@ -78,7 +80,7 @@ public class Game {
         scanner.nextLine();
         int a = new Random().nextInt(2);
         if (a == 1) {
-            damage = weapons[heroWeapon].doDamage();
+            damage = heroes[heroIndex - 1].doDamage();
             health = villains[villainIndex].getDamage(damage);
             villains[villainIndex].setHealth(health);
             System.out.println(heroes[heroIndex - 1].getName() + " попал и нанес урон: " + damage +
@@ -93,13 +95,13 @@ public class Game {
         return playerWin;
     }
 
-    public boolean compMove(int heroIndex, int villainWeapon, boolean compWin) {
+    public boolean compMove(int heroIndex, int villainIndex, boolean compWin) {
         int damage;
         int health;
         System.out.println("Ход злодея.");
         int a = new Random().nextInt(2);
         if (a == 1) {
-            damage = weapons[villainWeapon].doDamage();
+            damage = villains[villainIndex].doDamage();
             health = heroes[heroIndex - 1].getDamage(damage);
             heroes[heroIndex - 1].setHealth(health);
             System.out.println(villains[villainIndex].getName() + " попали и нанесли урон: " + damage +

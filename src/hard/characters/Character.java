@@ -1,7 +1,10 @@
 package hard.characters;
 
+import hard.weapons.Weapons;
+
 public abstract class Character implements Hero {
     private String name;
+    Weapons weapon;
     private int health;
 
 
@@ -14,6 +17,16 @@ public abstract class Character implements Hero {
     public int getDamage(int damage) {
         health = health - damage;
         return health;
+    }
+
+    @Override
+    public int doDamage() {
+        return weapon.getDamage();
+    }
+
+    @Override
+    public void setWeapon(Weapons weapons) {
+        this.weapon = weapons;
     }
 
     public String getName() {

@@ -6,6 +6,7 @@ public abstract class AbstractEmployee implements Employee {
     protected int salary;
     protected String name;
     private double finalSalary;
+    protected double bonus;
 
     public AbstractEmployee(int salary, String name) {
         this.salary = salary;

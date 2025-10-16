@@ -10,7 +10,7 @@ public abstract class Weapons implements Weapon {
     }
 
     @Override
-    public int doDamage() {
+    public int getDamage() {
         return damage;
     }
 

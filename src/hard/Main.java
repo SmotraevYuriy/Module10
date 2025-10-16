@@ -46,8 +46,8 @@ public class Main {
             playerWin = false;
             compWin = false;
             while (true) {
-                playerWin = game.playerMove(heroWeapon, villainIndex, playerWin);
-                compWin = game.compMove(heroIndex, villainWeapon, compWin);
+                playerWin = game.playerMove(heroIndex, villainIndex, playerWin);
+                compWin = game.compMove(heroIndex, villainIndex, compWin);
                 if (playerWin && !compWin) {
                     System.out.println("Вы победили");
                     break;

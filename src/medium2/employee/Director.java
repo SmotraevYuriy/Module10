@@ -1,7 +1,6 @@
 package medium2.employee;
 
 public class Director extends AbstractEmployee {
-    private double bonus;
 
     public Director(int salary) {
         super(salary, "Директор");
